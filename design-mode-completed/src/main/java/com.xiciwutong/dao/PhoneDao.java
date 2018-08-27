@@ -2,6 +2,7 @@ package com.xiciwutong.dao;
 
 import com.xiciwutong.dto.PhoneDto;
 import com.xiciwutong.model.PhoneModel;
+import com.xiciwutong.model.PhoneQueryModel;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @date: 2018-8-26
  */
 @Repository
-public interface PhoneDao {
+public interface PhoneDao extends PaginatingDao<PhoneDto, PhoneQueryModel> {
 
     /**
      *

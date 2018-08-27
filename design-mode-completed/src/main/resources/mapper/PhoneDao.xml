@@ -30,5 +30,21 @@
         <include refid="sql_condition"/>
     </select>
 
+    <select id="pagingQuery" resultType="com.xiciwutong.dto.PhoneDto">
+        <include refid="config"/>
+        SELECT id, name, brand, size, operating_system, price
+        FROM ${tableName}
+        <include refid="sql_condition"/>
+        limit #{lineNo}, #{pageSize}
+    </select>
+
+    <select id="total" resultType="long">
+        <include refid="config"/>
+        SELECT count(*)  from ${tableName}
+        <include refid="sql_condition"/>
+    </select>
+
+
+
 
 </mapper>
