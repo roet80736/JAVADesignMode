@@ -38,7 +38,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>5.1.40</version>
         </dependency>
 
         <!-- spring druid datasource 阿里数据连接池 -->
@@ -63,7 +63,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>4.0.1</version>
+            <version>4.0.0</version>
             <scope>provided</scope>
         </dependency>
 

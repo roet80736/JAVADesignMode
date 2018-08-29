@@ -11,7 +11,7 @@ import java.util.List;
  * @Author: wutong
  * @date: 2018-8-27
  */
-public class BasePaginatingServiceImpl<D, M> implements PaginatingService<D, M> {
+public abstract class BasePaginatingServiceImpl<D, M> implements PaginatingService<D, M> {
 
 
     private PaginatingDao<D, M> dao;
