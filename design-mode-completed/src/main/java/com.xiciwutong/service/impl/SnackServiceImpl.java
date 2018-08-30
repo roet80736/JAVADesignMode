@@ -4,10 +4,10 @@ import com.xiciwutong.dao.SnackDao;
 import com.xiciwutong.dto.PagingResultDto;
 import com.xiciwutong.dto.SnackDto;
 import com.xiciwutong.model.SnackModel;
+import com.xiciwutong.model.SnackQueryModel;
 import com.xiciwutong.service.SnackService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,12 +17,17 @@ import java.util.List;
  * @date: 2018-8-26
  */
 @Service
-public class SnackServiceImpl implements SnackService {
+public class SnackServiceImpl extends BasePaginatingServiceImpl<SnackDto, SnackQueryModel>
+        implements SnackService<SnackDto, SnackQueryModel> {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Autowired
     private SnackDao snackDao;
+
+    public SnackServiceImpl(SnackDao dao) {
+        super(dao);
+        this.snackDao = dao;
+    }
 
     @Override
     public PagingResultDto<SnackDto> list(SnackModel model) {

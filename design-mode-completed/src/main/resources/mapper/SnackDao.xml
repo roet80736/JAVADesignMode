@@ -30,6 +30,20 @@
         <include refid="sql_condition"/>
     </select>
 
+    <select id="pagingQuery" resultType="com.xiciwutong.dto.SnackDto">
+        <include refid="config"/>
+        SELECT id, name, brand, taste, price, pack, province
+        FROM ${tableName}
+        <include refid="sql_condition"/>
+        limit #{lineNo}, #{pageSize}
+    </select>
+
+    <select id="total" resultType="long">
+        <include refid="config"/>
+        SELECT count(*) from ${tableName}
+        <include refid="sql_condition"/>
+    </select>
+
 
 
 

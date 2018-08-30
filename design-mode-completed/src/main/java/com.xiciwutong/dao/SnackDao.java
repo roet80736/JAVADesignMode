@@ -2,6 +2,7 @@ package com.xiciwutong.dao;
 
 import com.xiciwutong.dto.SnackDto;
 import com.xiciwutong.model.SnackModel;
+import com.xiciwutong.model.SnackQueryModel;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +13,7 @@ import java.util.List;
  * @date: 2018-8-26
  */
 @Repository
-public interface SnackDao {
+public interface SnackDao extends PaginatingDao<SnackDto, SnackQueryModel> {
 
     /**
      *

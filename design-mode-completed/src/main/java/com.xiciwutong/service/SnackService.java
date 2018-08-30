@@ -8,7 +8,7 @@ import com.xiciwutong.model.SnackModel;
  * @Author: wutong
  * @date: 2018-8-26
  */
-public interface SnackService {
+public interface SnackService<D, M> extends PaginatingService<D, M> {
 
     /**
      *
