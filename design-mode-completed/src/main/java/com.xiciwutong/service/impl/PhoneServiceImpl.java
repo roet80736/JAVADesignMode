@@ -8,6 +8,7 @@ import com.xiciwutong.model.PhoneQueryModel;
 import com.xiciwutong.service.PhoneService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class PhoneServiceImpl extends BasePaginatingServiceImpl<PhoneDto, PhoneQ
 
 
     private PhoneDao phoneDao;
-
+    @Autowired
     public PhoneServiceImpl(PhoneDao dao) {
         super(dao);
         this.phoneDao = dao;

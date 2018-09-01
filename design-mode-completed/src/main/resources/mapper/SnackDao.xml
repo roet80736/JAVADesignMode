@@ -44,6 +44,13 @@
         <include refid="sql_condition"/>
     </select>
 
+    <select id="adapterPagingQuery" resultType="com.xiciwutong.dto.SnackAdapterDto">
+        <include refid="config"/>
+        SELECT id, name, brand, pack, province
+        FROM ${tableName}
+        <include refid="sql_condition"/>
+        limit #{lineNo}, #{pageSize}
+    </select>
 
 
 

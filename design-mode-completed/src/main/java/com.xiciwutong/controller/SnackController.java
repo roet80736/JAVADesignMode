@@ -2,6 +2,7 @@ package com.xiciwutong.controller;
 
 import com.xiciwutong.dto.PagingResultDto;
 import com.xiciwutong.dto.PhoneDto;
+import com.xiciwutong.dto.SnackAdapterDto;
 import com.xiciwutong.dto.SnackDto;
 import com.xiciwutong.model.PagingQueryModel;
 import com.xiciwutong.model.PhoneQueryModel;
@@ -45,6 +46,14 @@ public class SnackController {
     public PagingResultDto<SnackDto> list(@RequestBody PagingQueryModel<SnackQueryModel> model) {
         logger.info("paging 接口传入参数:{}", model);
         return snackService.paginate(model);
+
+    }
+
+    @ApiOperation(nickname = "adapter_paging", value = "查询手机列表3", notes = "查询手机列表3")
+    @PostMapping(value = "/adapter_paging")
+    public PagingResultDto<SnackAdapterDto> adapterPaging(@RequestBody PagingQueryModel<SnackQueryModel> model) {
+        logger.info("adapterPaging 接口传入参数:{}", model);
+        return snackService.adapterPaginate(model);
 
     }
 

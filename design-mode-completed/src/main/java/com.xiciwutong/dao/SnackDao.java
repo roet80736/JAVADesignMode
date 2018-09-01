@@ -1,5 +1,6 @@
 package com.xiciwutong.dao;
 
+import com.xiciwutong.dto.SnackAdapterDto;
 import com.xiciwutong.dto.SnackDto;
 import com.xiciwutong.model.SnackModel;
 import com.xiciwutong.model.SnackQueryModel;
@@ -28,4 +29,13 @@ public interface SnackDao extends PaginatingDao<SnackDto, SnackQueryModel> {
      * @return 查询分页的总条数
      */
     Long count(@Param("model") SnackModel model);
+
+    /**
+     *
+     * @return 查询分页信息
+     */
+    List<SnackAdapterDto> adapterPagingQuery(@Param("lineNo") Integer lineNo,
+                                             @Param("pageSize") Integer pageSize,
+                                             @Param("model") SnackQueryModel model);
+
 }
