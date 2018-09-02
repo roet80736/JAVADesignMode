@@ -3,7 +3,6 @@ package com.xiciwutong.service;
 import com.xiciwutong.dto.PagingResultDto;
 import com.xiciwutong.dto.PhoneDto;
 import com.xiciwutong.model.PhoneModel;
-import com.xiciwutong.service.impl.BasePaginatingServiceImpl;
 
 /**
  * @Author: wutong

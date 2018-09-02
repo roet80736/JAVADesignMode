@@ -18,7 +18,7 @@ import java.util.List;
  * @date: 2018-8-26
  */
 @Service
-public class PhoneServiceImpl extends BasePaginatingServiceImpl<PhoneDto, PhoneQueryModel>
+public class PhoneServiceImpl extends BasePaginatingService<PhoneDto, PhoneQueryModel>
         implements PhoneService<PhoneDto, PhoneQueryModel> {
 
     private Logger logger = LoggerFactory.getLogger(getClass());

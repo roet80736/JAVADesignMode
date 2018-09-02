@@ -21,7 +21,7 @@ import java.util.List;
  * @date: 2018-8-26
  */
 @Service
-public class SnackServiceImpl extends BasePaginatingServiceImpl<SnackDto, SnackQueryModel>
+public class SnackServiceImpl extends BasePaginatingService<SnackDto, SnackQueryModel>
         implements SnackService<SnackDto, SnackQueryModel> {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
@@ -59,14 +59,13 @@ public class SnackServiceImpl extends BasePaginatingServiceImpl<SnackDto, SnackQ
         return resultDto;
     }
 
+    /**
+     *
+     * @return 适配器模式
+     */
     @Override
     public PagingResultDto<SnackAdapterDto> adapterPaginate(PagingQueryModel<SnackQueryModel> model) {
-        BasePaginatingServiceImpl basePaginatingService = new BasePaginatingServiceImpl<SnackAdapterDto, SnackQueryModel> {
-            @Override
-            public PagingResultDto paginate(SnackQueryModel model) {
-                return super.paginate(model);
-            }
-        }
-        return null;
+        BasePaginatingService<SnackAdapterDto, SnackQueryModel> service = new BasePaginatingService<>(new AdapterSnackDao());
+        return service.paginate(model);
     }
 }

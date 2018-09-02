@@ -11,12 +11,12 @@ import java.util.List;
  * @Author: wutong
  * @date: 2018-8-27
  */
-public abstract class BasePaginatingServiceImpl<D, M> implements PaginatingService<D, M> {
+public class BasePaginatingService<D, M> implements PaginatingService<D, M> {
 
 
     private PaginatingDao<D, M> dao;
 
-    public BasePaginatingServiceImpl(PaginatingDao<D, M> dao) {
+    public BasePaginatingService(PaginatingDao<D, M> dao) {
         this.dao = dao;
     }
 
