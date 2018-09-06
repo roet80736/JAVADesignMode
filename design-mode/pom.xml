@@ -67,6 +67,13 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- 使用外部tomcat容器 打包war时采用 屏蔽内嵌tomcat就行了-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+            <!--<scope>provided</scope>-->
+        <!--</dependency>-->
+
 
     </dependencies>
 
