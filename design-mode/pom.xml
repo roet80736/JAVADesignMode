@@ -80,7 +80,7 @@
     <!-- 使用外部tomcat 打包时使用 -->
     <packaging>war</packaging>
     <build>
-        <finalName>design-model</finalName>
+        <finalName>design-mode</finalName>
     </build>
 
 
